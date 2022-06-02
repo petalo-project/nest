@@ -291,7 +291,7 @@ G4VParticleChange* NESTProc::PostStepDoIt(const G4Track& aTrack,
     if (!break_lineage) {
       for (const G4Track* sec : secondaries) {
         if (sec->GetDefinition() == G4OpticalPhoton::Definition() ||
-            sec->GetCreatorProcess()->GetProcessName().contains("annihil"))
+            sec->GetCreatorProcess()->GetProcessName().contains("pos_annihil"))
           continue;
         track_lins.insert(
             make_pair(make_tuple(sec->GetParentID(), sec->GetPosition(),
@@ -330,7 +330,7 @@ G4VParticleChange* NESTProc::PostStepDoIt(const G4Track& aTrack,
           for (const G4Track* sec : secondaries) {
             if (sec->GetDefinition() == G4OpticalPhoton::Definition() ||
                 sec->GetCreatorProcess()->GetProcessName().contains(
-                    "annihil")) {
+                    "pos_annihil")) {
               continue;
             }
             step_type = sec_type;
