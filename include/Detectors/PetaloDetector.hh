@@ -19,7 +19,7 @@ public:
     // Call the initialization of all the parameters
     Initialization();
   };
-  ~PetaloDetector() override = default;;
+  ~PetaloDetector() override = default;
 
   // Do here the initialization of all the parameters that are not varying as a function of time
   void Initialization() override {
@@ -90,8 +90,13 @@ public:
 
   // Drift electric field as function of Z in mm
   // For example, use a high-order poly spline
-  double FitEF ( double /*xPos_mm*/, double /*yPos_mm*/, double /*zPos_mm*/ ) override { // in V/cm
-      return 1000;
+  double FitEF ( double xPos_mm, double yPos_mm, double zPos_mm ) override { // in V/cm
+    double field = 1000;
+    double r_pos = std::sqrt(std::pow(xPos_mm, 2) + std::pow(yPos_mm, 2));
+    if (r_pos < 380 || r_pos > 410 || zPos_mm < -973 || zPos_mm > 973) {
+      field = 0;
+    }
+    return field;
   }
 
   std::vector<double> FitDirEF(double xPos_mm, double yPos_mm, double /*zPos_mm*/) override {
