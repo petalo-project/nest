@@ -1,5 +1,5 @@
-#ifndef Petalo_hh
-#define Petalo_hh
+#ifndef Petit_hh
+#define Petit_hh
 
 #include "VDetector.hh"
 using namespace std;
@@ -14,7 +14,7 @@ public:
 
   PetitDetector() {
    cerr << "*** Detector definition message ***" << endl;
-   cerr << "You are currently using the Petalo detector." << endl << endl;
+   cerr << "You are currently using the PETit detector." << endl << endl;
 
     // Call the initialization of all the parameters
     Initialization();
