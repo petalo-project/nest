@@ -14,7 +14,7 @@ public:
 
   PetitDetector() {
    cerr << "*** Detector definition message ***" << endl;
-   cerr << "You are currently using the Petalo detector." << endl << endl;
+   cerr << "You are currently using the PETit detector." << endl << endl;
 
     // Call the initialization of all the parameters
     Initialization();
