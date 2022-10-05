@@ -53,8 +53,8 @@ public:
 
     // Thermodynamic Properties
     inGas = false;
-    T_Kelvin = 163.; // T of the value of density used in G4
-    p_bar = 0.9; // P of the value of density used in G4
+    T_Kelvin = 164.; // T of the value of density used in G4
+    p_bar = 1.26; // P of the value of density used in G4
 
     // Data Analysis Parameters and Geometry
     dtCntr = 40.;  // center of detector for S1 corrections, in usec.
