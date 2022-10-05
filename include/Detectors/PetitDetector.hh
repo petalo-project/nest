@@ -1,5 +1,5 @@
-#ifndef Petalo_hh
-#define Petalo_hh
+#ifndef Petit_hh
+#define Petit_hh
 
 #include "VDetector.hh"
 using namespace std;
