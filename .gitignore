@@ -6,3 +6,7 @@ build/
 utils/larnest/data/
 *.pyc
 *__pycache__/
+
+bin
+lib
+*~
