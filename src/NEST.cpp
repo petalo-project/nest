@@ -2392,19 +2392,19 @@ double NESTcalc::GetDriftVelocity_Liquid(
   }
 
   if (speed <= 0.) {
-    cerr << "\nWARNING: DRIFT SPEED NON-POSITIVE. Setting to 0.1 mm/us\t"
-         << "Line Number ~1950 of NEST.cpp, in function "
-            "NESTcalc::GetDriftVelocity_Liquid\t"
-         << "Stop bothering Matthew about this, and fix underlying cause in "
-            "your code!\n";
+    // cerr << "\nWARNING: DRIFT SPEED NON-POSITIVE. Setting to 0.1 mm/us\t"
+    //      << "Line Number ~1950 of NEST.cpp, in function "
+    //         "NESTcalc::GetDriftVelocity_Liquid\t"
+    //      << "Stop bothering Matthew about this, and fix underlying cause in "
+    //         "your code!\n";
     if (eField < 1e2 && eField >= FIELD_MIN) {
-      cerr << "FIELD MAY BE TOO LOW. ";
+      // cerr << "FIELD MAY BE TOO LOW. ";
     } else if (eField > 1e4) {
-      cerr << "FIELD MAYBE TOO HIGH. ";
+      // cerr << "FIELD MAYBE TOO HIGH. ";
     } else {
-      cerr << "Something unknown went wrong: are you in a noble element?? ";
+      // cerr << "Something unknown went wrong: are you in a noble element?? ";
     }
-    cerr << "EF = " << eField << " V/cm. T = " << Kelvin << " Kelvin" << endl;
+    // cerr << "EF = " << eField << " V/cm. T = " << Kelvin << " Kelvin" << endl;
     speed = 0.1;
   }
   return speed;  // mm per microsecond
