@@ -91,11 +91,17 @@ public:
   // Drift electric field as function of Z in mm
   // For example, use a high-order poly spline
   double FitEF ( double xPos_mm, double yPos_mm, double zPos_mm ) override { // in V/cm
-    return 1;
+    return 1000;
   }
 
-  std::vector<double> FitDirEF(double xPos_mm, double yPos_mm, double /*zPos_mm*/) override {
-    std::vector<double> field_dir = {xPos_mm, yPos_mm, 0};
+  std::vector<double> FitDirEF(double xPos_mm, double yPos_mm, double zPos_mm) override {
+    std::vector<double> field_dir;
+    if (zPos_mm < 0) {
+      field_dir = {0, 0, -1};
+    } else {
+      field_dir = {0, 0, 1};
+    }
+
     return field_dir;
   }
 
